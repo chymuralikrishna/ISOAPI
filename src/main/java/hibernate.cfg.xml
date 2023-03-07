@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+
+		<!--Using Datasource connection -->
+		<property name="hibernate.connection.datasource">java:jboss/iso-ds</property>
+
+
+		<!--Using Direct DB Connection -->
+		<!--Test Database Settings -->
+<!-- 		<property name="hibernate.connection.url">jdbc:postgresql://172.19.98.161:5432/iso</property> -->
+<!-- 		<property name="hibernate.connection.username">iso</property> -->
+<!-- 		<property name="hibernate.connection.password">iso123</property> -->
+
+		<property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">none</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		<!-- <property name="current_session_context_class">thread</property> -->
+
+
+		<!-- Entity List -->
+
+		<mapping class="com.nfc.main.entities.IsoAuditDetails" />
+		<mapping class="com.nfc.main.entities.IsoAuditDetailsPK" />
+		<mapping class="com.nfc.main.entities.IsoAuditHdr" />
+		<mapping class="com.nfc.main.entities.IsoAuditFindings" />
+		<mapping class="com.nfc.main.entities.IsoAuditFindingsPK" />
+		<mapping class="com.nfc.main.entities.IsoAuditFindingsLogs" />
+		<mapping class="com.nfc.main.entities.IsoAuditors" />
+		<mapping class="com.nfc.main.entities.DmsAttachments" />
+
+		<mapping class="com.nfc.main.entities.ViewIsoAuditDetails" />
+
+
+	</session-factory>
+</hibernate-configuration>
+
